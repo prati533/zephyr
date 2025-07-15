@@ -31,11 +31,20 @@
 &pinctrl {
 	spim2_default: spim2_default {
 		group2 {
-			pinmux = <SPIM2_MOSI_GPIO8>;
+			pinmux = <SPIM2_MOSI_GPIO7>;
 		};
 	};
 };
-
+uart0_default: uart0_default {
+		group1 {
+			pinmux = <UART0_TX_GPIO8>;
+			output-high;
+		};
+		group2 {
+			pinmux = <UART0_RX_GPIO9>;
+			bias-pull-up;
+		};
+	};
 / {
 	aliases {
 		led-strip = &led_strip;
